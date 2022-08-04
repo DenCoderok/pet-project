@@ -1,0 +1,13 @@
+{
+  "add_todo": "Add todo",
+  "delete_todo": "Delete",
+  "input_previe": "Please enter your text...",
+  "dark_mode_btn": "Dark",
+  "light_mode_btn": "Light",
+  "error_empty_input": "Please enter value",
+  "filter_title": {
+    "all": "Show all",
+    "ready": "Show ready",
+    "not_ready": "Show not ready"
+  }
+}

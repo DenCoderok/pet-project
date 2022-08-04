@@ -1,0 +1,13 @@
+{
+  "add_todo": "Додати",
+  "delete_todo": "Видалити",
+  "input_previe": "Будь-ласка введiть ваш текст...",
+  "dark_mode_btn": "Темна",
+  "light_mode_btn": "Свiтла",
+  "error_empty_input": "Будь-ласка заповнiть поле",
+  "filter_title": {
+    "all": "Показати усi",
+    "ready": "Показати виконанi",
+    "not_ready": "Показати не виконанi"
+  }
+}
