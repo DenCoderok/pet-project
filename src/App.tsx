@@ -20,81 +20,15 @@ import {observer} from "mobx-react-lite";
 
 const App = observer(() => {
     const { t } = useTranslation();
-   // const [todoStorage, setToDoStorage] = useLocalStorage<TodoItemType[]>('Todo List', []);
- //   const [inputValue, setInputValue] = useState('');
+
     const [isInputEmpty, setIsInputEmpty] = useState<boolean>(false);
-    //const [workCopy, setWorkCopy] = useState(todoStorage);
-    //const [test, setTest] = useState('default');
 
-
-    /*const addTodoItem = () => {
-        if (!inputValue) {
-            setIsInputEmpty(true);
-            return;
-        }
-        const currentDate = new Date();
-        setToDoStorage([...todoStorage,{
-            id: Math.floor(Math.random() * 1000),
-            value: inputValue,
-            status: false,
-            date: currentDate.toLocaleDateString(),
-            time: currentDate.toLocaleTimeString(),
-        }])
-        setInputValue('');
-    }*/
-
-   /* const removeTodoItem = (id:number) => {
-        setToDoStorage(
-            todoStorage.filter(todo => todo.id !== id)
-        )
-    }
-
-    const onStatusChange = (id:number) => {
-        setToDoStorage(
-            todoStorage.map((elem) => ({
-                ...elem,
-                status: id === elem.id ? !elem.status : elem.status,
-            }))
-        );
-    }
-
-    const editTodo = (todoId:number, value:string) => {
-        setToDoStorage(
-            todoStorage.map(todo => {
-                if (todo.id !== todoId) {
-                    return todo;
-                }
-                return {...todo, value}
-            })
-        )
-    }*/
-
-    // const onInputValueChange = (v:string) => {
-    //     setIsInputEmpty(false);
-    //     setInputValue(v);
-    // }
 
     const filterTypes = [
         {title: t('filter_title.all'), filterType: 'all'},
         {title: t('filter_title.ready'), filterType: 'ready'},
         {title: t('filter_title.not_ready'), filterType: 'notReady'},
     ]
-
-    /*useEffect(() => {
-        switch (test) {
-            case 'ready':
-                return setWorkCopy(
-                    todoStorage.filter(todo => todo.status === true)
-                );
-            case 'notReady':
-                return setWorkCopy(
-                    todoStorage.filter(todo => todo.status === false)
-                );
-            default:
-                return setWorkCopy(todoStorage);
-        }
-    },[todoStorage, test])*/
-
 
     return (
         <div
