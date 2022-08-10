@@ -46,6 +46,9 @@ html {
     flex-direction: column;
     justify-content: center;
 }
+.todoList__wrapper-container__items-info {
+    color: var(--color);
+}
 /*
 .main__wrapper-container {
     display: flex;
