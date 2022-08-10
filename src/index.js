@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { HashRouter as Router } from 'react-router-dom';
-import App from './App_useState.tsx';
+import AppMobX from './AppMobX.tsx';
 
 import './i18n.js';
 
@@ -10,7 +10,7 @@ root.render(
   <React.StrictMode>
       <React.Suspense fallback="loading">
           <Router>
-              <App />
+              <AppMobX />
           </Router>
       </React.Suspense>
   </React.StrictMode>

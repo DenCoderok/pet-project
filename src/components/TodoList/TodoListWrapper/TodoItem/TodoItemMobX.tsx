@@ -1,28 +1,26 @@
 import React, { useState } from 'react';
-import {useTranslation} from "react-i18next";
+import { useTranslation } from 'react-i18next';
+import { storeMobX } from '../../../../storeMobX/todoStoreMobX.ts';
+import { observer } from 'mobx-react-lite';
 
 type Props = {
     todo: TodoItemType;
-    onStatusChange: (id:number) => void;
-    removeTodoItem: (id:number) => void;
-    editTodo: (todoId:number, value:string) => void;
 }
 
-export const TodoItem:React.FC<Props> = ({
- todo,
- onStatusChange,
- removeTodoItem,
- editTodo,
-}) => {
+const TodoItemMobX:React.FC<Props> = ({ todo}) => {
 
     const [initialValue, setInitialValue] = useState<string>(todo.value);
-    const [isEditable, setIsEditable] = useState<boolean>(false);
     const { t } = useTranslation();
+    const {
+        editTodo,
+        onStatusChange,
+        onEditableChange,
+        removeTodoItem
+    } = storeMobX;
 
     const handleKeyDown = (event) => {
         if(event.keyCode === 13) {
-            editTodo(id, initialValue);
-            setIsEditable(!isEditable);
+           editTodo(id, initialValue);
         }
     }
     const { id, value, status } = todo;
@@ -35,20 +33,18 @@ export const TodoItem:React.FC<Props> = ({
             />
 
             {
-                isEditable ? (
+                todo.isEditable ? (
                     <input
                         type="text"
                         className="eidtable_input"
                         value={initialValue}
-                        onChange={(e) => {
-                            setInitialValue(e.target.value)
-                        }}
+                        onChange={(e) => setInitialValue(e.target.value)}
                         onKeyDown={(e) => handleKeyDown(e)}
                     />
                 ) : (
                     <span
                         className={status ? 'ready' : 'notReady'}
-                        onDoubleClick={() => setIsEditable(!isEditable)}
+                        onDoubleClick={() => onEditableChange(id)}
                     >
                         {value}
                     </span>
@@ -66,3 +62,4 @@ export const TodoItem:React.FC<Props> = ({
     );
 };
 
+export default observer(TodoItemMobX);

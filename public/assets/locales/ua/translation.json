@@ -8,6 +8,9 @@
   "filter_title": {
     "all": "Показати усi",
     "ready": "Показати виконанi",
-    "not_ready": "Показати не виконанi"
+    "not_ready": "Показати не виконанi",
+    "show_total": "Усього",
+    "show_ready": "Виконаних",
+    "show_notReady": "Не виконаних"
   }
 }

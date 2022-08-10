@@ -32,6 +32,7 @@ const ThemeColor = () => {
                                 : "buttons"
                        }
                        type="button"
+                       key={color}
                        onClick={(e) => onThemeChoose(e)}
                   >
                       {color}

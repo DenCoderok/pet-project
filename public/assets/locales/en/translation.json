@@ -8,6 +8,9 @@
   "filter_title": {
     "all": "Show all",
     "ready": "Show ready",
-    "not_ready": "Show not ready"
+    "not_ready": "Show not ready",
+    "show_total": "Total Items",
+    "show_ready": "Ready Items",
+    "show_notReady": "Not Ready Items"
   }
 }
